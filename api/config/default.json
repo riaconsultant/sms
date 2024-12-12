@@ -1,0 +1,21 @@
+{
+  "envconfig": {
+    "environment": "development",
+    "site_url": "http://localhost",
+    "keepme_session": 8,
+    "session_time": 2,
+
+    "publicPath": ["hello", "authenticate", "forgotPassword"],
+    "connections": {
+      "mongodb": "mongodb://localhost:27017/rms",
+      "redis": "redis://localhost:6379"
+    },
+
+    "database": {
+      "db": "rms",
+      "host": "localhost",
+      "username": "manu",
+      "port": "1234"
+    }
+  }
+}

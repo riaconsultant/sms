@@ -8,7 +8,7 @@
     <meta name="author" content="Manoj Chaurasiya">
     <meta name="keywords" content="SMS, School Management Software, 2024">
     <title>School Management System - </title>
-
+    <link rel="manifest" href="/manifest.json"/>
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -691,6 +691,40 @@
     new WOW().init();
 
 </script>
-
+<script>
+    if ("serviceWorker" in navigator) {
+      //if the browser supports serviceWorkers
+      window.addEventListener("load", function () {
+        navigator.serviceWorker
+          //registers the worker.js file you just made
+          .register("worker.js")
+          .then(
+            function (registration) {
+              console.log(
+                "Worker registration successful",
+                registration.scope
+              );
+            },
+            function (err) {
+              console.log("Worker registration failed", err);
+            }
+          )
+          .catch(function (err) {
+            console.log(err);
+          });
+      });
+    } else {
+      console.log("Service Worker is not supported by browser.");
+    }
+  </script>
+  <script>
+    function ShareHandler() {
+      navigator.share({
+        title: "Manoj Chaurasiya's Profile",
+        text: "Manoj's Profile and blog",
+        url: window.location.href,
+      });
+    }
+  </script>
 </body>
 </html>
